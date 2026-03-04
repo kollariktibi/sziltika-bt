@@ -1332,6 +1332,61 @@ img {
     margin-top: 4rem;
 }
 
+/* === Cookie sáv === */
+.cookie-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9000;
+    background: var(--color-dark);
+    color: rgba(255,255,255,0.85);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    flex-wrap: wrap;
+}
+
+.cookie-bar.visible {
+    transform: translateY(0);
+}
+
+.cookie-bar p {
+    margin: 0;
+    flex: 1;
+    min-width: 200px;
+}
+
+.cookie-bar a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+.cookie-accept {
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background var(--transition);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.cookie-accept:hover {
+    background: var(--color-primary-dark);
+}
+
 /* === Contact map === */
 .contact-map {
     border-radius: var(--radius);

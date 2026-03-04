@@ -429,6 +429,12 @@
         </div>
     </footer>
 
+    <!-- Cookie sáv -->
+    <div class="cookie-bar" id="cookieBar">
+        <p>Ez az oldal <strong>Google Maps</strong> és <strong>Google Fonts</strong> szolgáltatásokat használ, amelyek harmadik féltől származó sütiket alkalmazhatnak. Az oldal böngészésével elfogadod ezek használatát. <a href="https://policies.google.com/privacy?hl=hu" target="_blank" rel="noopener">Google adatvédelem</a></p>
+        <button class="cookie-accept" id="cookieAccept">Elfogadom</button>
+    </div>
+
     <!-- Lightbox a galériához -->
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" aria-label="Bezárás">&times;</button>
@@ -524,6 +530,16 @@
 
         document.querySelectorAll('.service-card, .gallery-item, .about-owners, .contact-grid').forEach(el => {
             observer.observe(el);
+        });
+
+        // Cookie sáv
+        const cookieBar = document.getElementById('cookieBar');
+        if (!localStorage.getItem('cookieAccepted')) {
+            cookieBar.classList.add('visible');
+        }
+        document.getElementById('cookieAccept').addEventListener('click', () => {
+            localStorage.setItem('cookieAccepted', '1');
+            cookieBar.classList.remove('visible');
         });
     </script>
 </body>
